@@ -1,0 +1,51 @@
+/*
+ѕростейшие логические
+
+ASSERT_TRUE(condition);
+ASSERT_FALSE(condition);
+
+
+—равнение
+
+ASSERT_EQ(expected, actual); Ч =
+ASSERT_NE(val1, val2); Ч !=
+ASSERT_LT(val1, val2); Ч <
+ASSERT_LE(val1, val2); Ч <=
+ASSERT_GT(val1, val2); Ч >
+ASSERT_GE(val1, val2); Ч >=
+
+
+—равнение строк
+
+ASSERT_STREQ(expected_str, actual_str);
+ASSERT_STRNE(str1, str2);
+ASSERT_STRCASEEQ(expected_str, actual_str); Ч регистронезависимо
+ASSERT_STRCASENE(str1, str2); Ч регистронезависимо
+
+
+ѕроверка на исключени€
+
+ASSERT_THROW(statement, exception_type);
+ASSERT_ANY_THROW(statement);
+ASSERT_NO_THROW(statement);
+
+
+ѕроверка предикатов
+
+ASSERT_PREDN(pred, val1, val2, ..., valN); Ч N <= 5
+ASSERT_PRED_FORMATN(pred_format, val1, val2, ..., valN); Ч работает аналогично предыдущей, но позвол€ет контролировать вывод
+
+
+—равнение чисел с плавающей точкой
+
+ASSERT_FLOAT_EQ(expected, actual); Ч неточное сравнение float
+ASSERT_DOUBLE_EQ(expected, actual); Ч неточное сравнение double
+ASSERT_NEAR(val1, val2, abs_error); Ч разница между val1 и val2 не превышает погрешность abs_error
+
+
+¬ызов отказа или успеха
+
+SUCCEED();
+FAIL();
+ADD_FAILURE();
+ADD_FAILURE_AT(Ђfile_pathї, line_number);
