@@ -45,11 +45,11 @@ TEST(TemperatureAnalyzer, TestFreezingDebug) {
 TEST(TemperatureAnalyzer, TestHeating) {
 	f_run_good = false;
 	Temperature t = 5;
-	TemperatureAnalyzer(t, &ActionGoodRun, &ActionBadRun);
+	TemperatureAnalyzer(t, &ActionTurnOnTheHeater, &ActionAlarm);
 	uint8_t cur_state = GetSateHeater();
 	EXPECT_TRUE(cur_state != 0);
 	t = 200;
-	TemperatureAnalyzer(t, &ActionBadRun, &ActionGoodRun);
+	TemperatureAnalyzer(t, &ActionTurnOnTheHeater, &ActionAlarm);
 	cur_state = GetSateHeater();
 	EXPECT_TRUE(cur_state==0);
 	//EXPECT_EQ(1, 1);
